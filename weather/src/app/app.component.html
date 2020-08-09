@@ -1,0 +1,31 @@
+<div class="container">
+  
+  <div class="col-md-6">
+  <h5 class="text-center my-4">Search for Your City Weather:</h5>
+  <form  [formGroup]="weatherSearchForm" (ngSubmit)="getWeather(weatherSearchForm.value)">
+    <div class="form-group">
+      <input
+        class="form-control"
+        type="text"
+        id="weatherLocation"
+        aria-describedby="weatherLocation"
+        placeholder="Please enter Location"
+        formControlName="location"  
+      />
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">
+       Get Weather
+      </button>
+    </div>
+  </form>
+</div>
+<div class="col-md-6">
+  <h5 class="text-center my-4">Weather Details:</h5>
+  <p>{{ message }}</p>
+ <p > City: {{ city }}</p>
+ <p > Base: {{ base }}</p>
+ <p > Country: {{ country }}</p>
+</div>
+  
+</div>
